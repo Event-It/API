@@ -11,17 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-      //  factory(App\Model\User::class,100)->create();
-        //factory(App\Model\UserAuthentication::class,100)->create();
-        //factory(App\Model\EventType::class,10)->create();
-      //  factory(App\Model\Event::class,150)->create();
-       //factory(App\Model\SubEvent::class,20)->create();
-       //factory(App\Model\TicketDescription::class,500)->create();
-       //factory(App\Model\Booking::class,300)->create();
-       //factory(App\Model\Member::class,50)->create();
-       //factory(App\Model\Announcement::class,100)->create();
-       //factory(App\Model\TaskTag::class,50)->create();
-       //factory(App\Model\Task::class,200)->create();
+        //factory(App\user::class,100)->create();
+        //factory(App\eventtype::class,10)->create();
+        //factory(App\event::class,150)->create();
+       //factory(App\subevent::class,300)->create();
+       //factory(App\ticketdescription::class,250)->create(); //for event data
+       //factory(App\ticketdescription::class,200)->create(); //for subevent data
+       //factory(App\tasktag::class,100)->create();
+       //factory(App\transaction::class,150)->create();
+       //factory(App\announcement::class,100)->create();
+       //factory(App\checkin::class,150)->create();
+       factory(App\checkout::class,150)->create();
     }
 }

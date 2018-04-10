@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\announcement;
+use App\eventtype;
 use Illuminate\Http\Request;
 
-class AnnouncementController extends Controller
+class EventtypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AnnouncementController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\announcement  $announcement
+     * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
      */
-    public function show(announcement $announcement)
+    public function show(eventtype $eventtype)
     {
         //
     }
@@ -52,10 +52,10 @@ class AnnouncementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\announcement  $announcement
+     * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
      */
-    public function edit(announcement $announcement)
+    public function edit(eventtype $eventtype)
     {
         //
     }
@@ -64,10 +64,10 @@ class AnnouncementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\announcement  $announcement
+     * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, announcement $announcement)
+    public function update(Request $request, eventtype $eventtype)
     {
         //
     }
@@ -75,10 +75,10 @@ class AnnouncementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\announcement  $announcement
+     * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
      */
-    public function destroy(announcement $announcement)
+    public function destroy(eventtype $eventtype)
     {
         //
     }

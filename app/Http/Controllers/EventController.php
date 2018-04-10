@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Event;
+use App\event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -41,10 +41,10 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Event  $event
+     * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show(event $event)
     {
         //
     }
@@ -52,10 +52,10 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Event  $event
+     * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit(event $event)
     {
         //
     }
@@ -64,10 +64,10 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Event  $event
+     * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, event $event)
     {
         //
     }
@@ -75,10 +75,10 @@ class EventController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Event  $event
+     * @param  \App\event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy(event $event)
     {
         //
     }
