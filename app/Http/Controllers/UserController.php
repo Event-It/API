@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\user;
 use Illuminate\Http\Request;
+use App\Http\Resources\User\UserResource;
 
 class UserController extends Controller
 {
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return user::all();
     }
 
     /**
@@ -46,7 +47,8 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
-        //
+      //return $user;
+        return new UserResource($user);
     }
 
     /**
