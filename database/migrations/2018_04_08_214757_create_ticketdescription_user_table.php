@@ -23,7 +23,7 @@ class CreateTicketdescriptionUserTable extends Migration
              $table->dateTime('ticket_purchasedate');
              $table->integer('transaction_id')->unsigned();
              $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
-             $table->boolean('ticketdescription_user_is_active');
+             $table->boolean('ticketdescription_user_is_active')->default(1);
              $table->timestamps();
         });
     }

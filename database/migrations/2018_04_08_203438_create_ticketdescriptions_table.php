@@ -16,12 +16,12 @@ class CreateTicketdescriptionsTable extends Migration
         Schema::create('ticketdescriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ticket_type');
-            $table->integer('ticket_price');
-            $table->integer('available_tickets');
-            $table->integer('sold_tickets');
+            $table->integer('ticket_price')->nullable();
+            $table->integer('available_tickets')->nullable();
+            $table->integer('sold_tickets')->default(0);
             $table->integer('ticketdescriptionable_id')->unsigned();
             $table->string('ticketdescriptionable_type');
-            $table->boolean('ticketdescription_is_active');
+            $table->boolean('ticketdescription_is_active')->default(1);
             $table->timestamps();
         });
     }

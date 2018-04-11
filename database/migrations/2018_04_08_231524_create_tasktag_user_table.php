@@ -18,13 +18,13 @@ class CreateTasktagUserTable extends Migration
             $table->string('task_heading');
             $table->integer('tasktag_id')->unsigned();
             $table->foreign('tasktag_id')->references('id')->on('tasktags')->onDelete('cascade');
-            $table->text('task_description');
-            $table->dateTime('task_due_date');
-            $table->integer('task_status');
+            $table->text('task_description')->nullable();
+            $table->dateTime('task_due_date')->nullable();
+            $table->integer('task_status')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('task_priority');
-            $table->boolean('task_is_active');
+            $table->integer('task_priority')->nullable();
+            $table->boolean('task_is_active')->default(1);
             $table->timestamps();
         });
     }

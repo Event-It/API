@@ -24,10 +24,10 @@ class CreateSubeventsTable extends Migration
              $table->dateTime('subevent_end_time');
              $table->timestamps();
              $table->string('subevent_venue',40);
-             $table->text('subevent_thumbnail_photo');
-             $table->text('subevent_banner_photo');
-             $table->boolean('subevent_security_option');
-             $table->boolean('subevent_is_active');
+             $table->text('subevent_thumbnail_photo')->nullable();
+             $table->text('subevent_banner_photo')->nullable();
+             $table->boolean('subevent_security_option')->default(0);
+             $table->boolean('subevent_is_active')->default(1);
         });
     }
 

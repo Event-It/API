@@ -22,7 +22,8 @@ class CreateUserUsertypeTable extends Migration
            $table->unique(['user_id','usertype_id']);
            $table->string('user_email',40);
            $table->string('user_password',30);
-           $table->boolean('user_usertype_is_active');
+           $table->string('user_token')->unique();
+           $table->boolean('user_usertype_is_active')->default(1);
            $table->timestamps();
         });
     }
