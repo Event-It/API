@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\user;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -35,7 +38,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new user;
+        $user->user_first_name = $request->firstname;
+        $user->user_last_name = $request->lastname;
+        $user->save();
+        $values = array('user_id' => $user->id, 'usertype_id' => $request->usertype, 'user_email' => $request->email, 'user_password' => $request->password, 'user_token' => md5($user->id . $request->usertype . $request->email . $request->password));
+        $authID = DB::table('user_usertype')->insertGetId($values);
+        $results = DB::select('SELECT user_id , user_token from user_usertype where id ='.$authID);
+        return response($results,Response::HTTP_CREATED);
     }
 
     /**

@@ -18,7 +18,7 @@ class CreateTasktagsTable extends Migration
             $table->string('tasktag_name');
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->boolean('tasktag_is_active');
+            $table->boolean('tasktag_is_active')->default(1);
             $table->timestamps();
         });
     }

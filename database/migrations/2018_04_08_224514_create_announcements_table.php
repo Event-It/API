@@ -19,7 +19,7 @@ class CreateAnnouncementsTable extends Migration
            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
            $table->string('announcement_heading');
            $table->text('announcement_text');
-           $table->boolean('announcement_is_active');
+           $table->boolean('announcement_is_active')->default(1);
            $table->timestamps();
         });
     }

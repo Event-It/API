@@ -16,7 +16,7 @@ class CreateUsertypesTable extends Migration
         Schema::create('usertypes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('user_type',20);
-            $table->boolean('usertype_is_active');
+            $table->boolean('usertype_is_active')->default(1);
             $table->timestamps();
         });
     }
