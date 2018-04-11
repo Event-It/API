@@ -39,10 +39,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new user;
-        $user->user_first_name = $request->firstname;
-        $user->user_last_name = $request->lastname;
+        $user->user_first_name = $request->user_first_name;
+        $user->user_last_name = $request->user_last_name;
         $user->save();
-        $values = array('user_id' => $user->id, 'usertype_id' => $request->usertype, 'user_email' => $request->email, 'user_password' => $request->password, 'user_token' => md5($user->id . $request->usertype . $request->email . $request->password));
+        $values = array('user_id' => $user->id, 'usertype_id' => $request->usertype_id, 'user_email' => $request->user_email, 'user_password' => $request->user_password, 'user_token' => md5($user->id . $request->usertype . $request->email . $request->password));
         $authID = DB::table('user_usertype')->insertGetId($values);
         $results = DB::select('SELECT user_id , user_token from user_usertype where id ='.$authID);
         return response($results,Response::HTTP_CREATED);
@@ -80,7 +80,11 @@ class UserController extends Controller
      */
     public function update(Request $request, user $user)
     {
-        //
+      $user->update($request->all());
+      return response([
+          'user_id' => $user->id,
+          'status' => "Update successfull"
+      ],Response::HTTP_CREATED);
     }
 
     /**
