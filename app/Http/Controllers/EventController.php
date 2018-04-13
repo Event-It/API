@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        return event::all();
     }
 
     /**
@@ -35,7 +35,8 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
     }
 
     /**
@@ -57,7 +58,7 @@ class EventController extends Controller
      */
     public function edit(event $event)
     {
-        //
+        
     }
 
     /**
