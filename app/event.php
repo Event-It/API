@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class event extends Model
 {
+  protected $fillable = [
+		'event_name','event_start_time','event_end_time','event_country',
+    'event_venue','event_city','event_description','event_video_link',
+    'event_website','event_thumbnail_photo','event_banner_photo','event_status',
+    'event_security_option','event_has_sub_event','event_is_active'
+	];
+
     public function users() {
       return $this->belongsTo(user::class);
     }
