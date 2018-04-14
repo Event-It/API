@@ -23,6 +23,7 @@ class CreateEventsTable extends Migration
             $table->string('event_country',30)->default('India');
             $table->string('event_venue',50);
             $table->string('event_city',30);
+            $table->text('event_description')->nullable();
             $table->string('event_video_link')->nullable();
             $table->string('event_website')->nullable();
             $table->text('event_thumbnail_photo')->nullable();

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\event;
+use App\user;
 use Illuminate\Http\Request;
+use App\Http\Resources\Event\UserEventResourceCollection;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -12,9 +15,13 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return event::all();
+         if($request->has('user_id')){
+           $events = user::find($request->user_id)->events;
+           return UserEventResourceCollection::collection($events);
+         }
+
     }
 
     /**
@@ -58,7 +65,7 @@ class EventController extends Controller
      */
     public function edit(event $event)
     {
-        
+
     }
 
     /**
