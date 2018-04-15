@@ -17,12 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
       return UserResource::collection(user::all());
-=======
-        return UserResource::collection(user::all());
-        //return user::all();
->>>>>>> 711f66d0a1739eac056496580a249b613b33e88e
     }
 
     /**
