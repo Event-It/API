@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\event;
 use Illuminate\Http\Request;
+use App\Http\Resources\Event\EventResource;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\DB;
+
 
 class EventController extends Controller
 {
@@ -14,7 +18,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        return event::all();
+        return EventResource::collection(event::all());
     }
 
     /**
@@ -58,7 +62,7 @@ class EventController extends Controller
      */
     public function edit(event $event)
     {
-        
+
     }
 
     /**
