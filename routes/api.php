@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::apiResource('/user','UserController');
 Route::apiResource('/event','EventController');
+Route::apiResource('/ticket','TicketdescriptionController');

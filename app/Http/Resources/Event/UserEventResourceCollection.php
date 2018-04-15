@@ -20,7 +20,8 @@ class UserEventResourceCollection extends Resource
               'event_description' => $this->event_description,
               'event_venue' => $this->event_venue,
               'event_city' => $this->event_city,
-              'event_start_time' => $this->event_start_time
+              'event_start_time' => $this->event_start_time,              
+              'event_thumbnail_photo' => $this->event_thumbnail_photo
         ];
     }
 }

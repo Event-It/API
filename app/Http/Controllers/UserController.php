@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+
+  public function __construct(){
+        $this->middleware('CheckUserToken')->except('index','store');
+    }
+
     /**
      * Display a listing of the resource.
      *
