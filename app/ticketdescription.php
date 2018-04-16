@@ -12,6 +12,8 @@ Relation::morphMap([
 
 class ticketdescription extends Model
 {
+  protected $fillable = array('ticket_type', 'ticket_price' ,'available_tickets','sold_tickets','ticketdescriptionable_id','ticketdescriptionable_type');
+
     public function ticketdescriptionable() {
       return $this->morphTo();
     }

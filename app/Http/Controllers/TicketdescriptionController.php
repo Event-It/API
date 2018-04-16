@@ -16,7 +16,7 @@ class TicketdescriptionController extends Controller
      */
     public function index()
     {
-        return TicketDescriptionResource::collection(ticketdescription::all());      
+        return TicketDescriptionResource::collection(ticketdescription::all());
     }
 
     /**
@@ -58,6 +58,7 @@ class TicketdescriptionController extends Controller
      */
     public function show(ticketdescription $ticketdescription)
     {
+        //return $ticketdescription;
         return new TicketDescriptionResource($ticketdescription);
     }
 
