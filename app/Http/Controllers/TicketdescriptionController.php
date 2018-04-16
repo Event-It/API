@@ -57,16 +57,9 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function show(ticketdescription $ticketdescription)
+    public function show(ticketdescription $ticket)
     {
-<<<<<<< HEAD
-        //return
-        //return $ticketdescription;
-        return new TicketDescriptionResource(ticketdescription::find(1));
-=======
-        //return $ticketdescription;
-        return new TicketDescriptionResource($ticketdescription);
->>>>>>> 1168ad6de75261bb295460f09d7c0359a7b01fa3
+        return new TicketDescriptionResource($ticket);
     }
 
     /**
@@ -87,11 +80,11 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ticketdescription $ticketdescription)
+    public function update(Request $request, ticketdescription $ticket)
     {
-      $ticketdescription->update($request->all());
+      $ticket->update($request->all());
       return response([
-          'user_id' => $ticketdescription->id,
+          'user_id' => $ticket->id,
           'status' => "Update successful"
       ],Response::HTTP_CREATED);
     }
@@ -102,9 +95,9 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ticketdescription $ticketdescription)
+    public function destroy(ticketdescription $ticket)
     {
-        $ticketdescription->delete();
+        $ticket->delete();
         return response(null,Response::HTTP_NO_CONTENT);
     }
 }
