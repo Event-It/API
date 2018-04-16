@@ -59,9 +59,14 @@ class TicketdescriptionController extends Controller
      */
     public function show(ticketdescription $ticketdescription)
     {
+<<<<<<< HEAD
         //return
         //return $ticketdescription;
         return new TicketDescriptionResource(ticketdescription::find(1));
+=======
+        //return $ticketdescription;
+        return new TicketDescriptionResource($ticketdescription);
+>>>>>>> 1168ad6de75261bb295460f09d7c0359a7b01fa3
     }
 
     /**
