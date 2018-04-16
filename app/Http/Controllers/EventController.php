@@ -29,7 +29,7 @@ class EventController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource.x
      *
      * @return \Illuminate\Http\Response
      */
@@ -47,7 +47,7 @@ class EventController extends Controller
     public function store(Request $request)
     {
       $event = new event;
-       $event->eventtype_id = $request->eventtype_id;
+      $event->eventtype_id = $request->eventtype_id;
       $event->event_name = $request->event_name;
       $event->event_start_time = $request->event_start_time;
       $event->event_end_time = $request->event_end_time;

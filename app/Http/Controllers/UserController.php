@@ -59,7 +59,9 @@ class UserController extends Controller
           $results = DB::select('SELECT user_id , user_token from user_usertype where id ='.$authID);
           return response($results,Response::HTTP_CREATED);
         } else
-            return "User Already Exist. Cannot Register You Again, Nigga";
+          return response([
+              'status' => "User already exist!"
+          ],Response::HTTP_CREATED);
     }
 
     /**
