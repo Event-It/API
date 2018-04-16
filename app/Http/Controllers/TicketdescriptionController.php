@@ -6,6 +6,7 @@ use App\ticketdescription;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Resources\Tickets\TicketDescriptionResource;
+use Illuminate\Support\Facades\DB;
 
 class TicketdescriptionController extends Controller
 {
@@ -16,7 +17,7 @@ class TicketdescriptionController extends Controller
      */
     public function index()
     {
-        return TicketDescriptionResource::collection(ticketdescription::all());      
+        return TicketDescriptionResource::collection(ticketdescription::all());
     }
 
     /**
@@ -58,7 +59,9 @@ class TicketdescriptionController extends Controller
      */
     public function show(ticketdescription $ticketdescription)
     {
-        return new TicketDescriptionResource($ticketdescription);
+        //return
+        //return $ticketdescription;
+        return new TicketDescriptionResource(ticketdescription::find(1));
     }
 
     /**

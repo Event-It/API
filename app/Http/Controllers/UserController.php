@@ -72,6 +72,7 @@ class UserController extends Controller
      */
     public function show(user $user)
     {
+        return $user;
         return new UserResource($user);
     }
 
