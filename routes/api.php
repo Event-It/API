@@ -14,7 +14,13 @@ use Illuminate\Http\Request;
 */
 
 Route::apiResource('/user','UserController');
+Route::post('/login','UserController@login');
 Route::apiResource('/event','EventController');
+<<<<<<< HEAD
 Route::apiResource('/ticket','TicketdescriptionController');
 /*	Route::apiResource('/{event}/subevent','SubeventController');
 });*/
+=======
+Route::apiResource('/ticketdescription','TicketdescriptionController');
+Route::apiResource('/announcement','AnnouncementController');
+>>>>>>> b84e96d2e9141ed81a532f2502b9d2a4614f59f9

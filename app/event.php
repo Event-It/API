@@ -30,7 +30,7 @@ class event extends Model
     }
 
     public function member() {
-      return $this->belongsToMany(user::class,'member','user_id','event_id')->withTimestamps();
+      return $this->belongsToMany(user::class,'member','event_id','user_id')->withTimestamps();
     }
 
     public function tasktags() {

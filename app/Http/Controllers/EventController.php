@@ -20,12 +20,10 @@ class EventController extends Controller
     public function index(Request $request)
     {
       // events to show as preview to Organisers page who has created events.
-         if($request->has('user_id')){
-           $events = user::find($request->user_id)->events;
+         if($request->has('user_id')){                //maybe this if condition is unnecessary
+           $events = user::find(2)->events->where('event_status','=',0)->where('event_is_active','=',1);
            return UserEventResourceCollection::collection($events);
          }
-      //
-
     }
 
     /**
@@ -59,7 +57,7 @@ class EventController extends Controller
       $event->save();
       return response([
           'event_id' => $event->id,
-          'status' => "Event created successfull"
+          'status' => "Event created successful"
       ],Response::HTTP_CREATED);
     }
 

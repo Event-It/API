@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\announcement;
+use App\user;
 use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
@@ -14,7 +15,8 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        //
+        $announcement = user::with('member.announcements')->find(85);
+        return $announcement;
     }
 
     /**

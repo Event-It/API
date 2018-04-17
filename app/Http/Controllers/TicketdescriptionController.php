@@ -57,9 +57,9 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function show(ticketdescription $ticket)
+    public function show(ticketdescription $ticketdescription)
     {
-        return new TicketDescriptionResource($ticket);
+        return new TicketDescriptionResource($ticketdescription);
     }
 
     /**
@@ -80,9 +80,9 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ticketdescription $ticket)
+    public function update(Request $request, ticketdescription $ticketdescription)
     {
-      $ticket->update($request->all());
+      $ticketdescription->update($request->all());
       return response([
           'user_id' => $ticket->id,
           'status' => "Update successful"
@@ -95,9 +95,9 @@ class TicketdescriptionController extends Controller
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ticketdescription $ticket)
+    public function destroy(ticketdescription $ticketdescription)
     {
-        $ticket->delete();
+        $ticketdescription->delete();
         return response(null,Response::HTTP_NO_CONTENT);
     }
 }
