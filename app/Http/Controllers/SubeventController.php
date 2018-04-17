@@ -14,7 +14,7 @@ class SubeventController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
