@@ -18,12 +18,13 @@ class CheckUserToken
      */
     public function handle(Request $request, Closure $next)
     {
-       $token = $request->header('token');
-       $id = $request->user->id;
-       $result =  DB::select( DB::raw("SELECT count(*) AS COUNT FROM user_usertype WHERE user_id = $id AND user_token='$token'") );
-       if((int)$result[0]->COUNT == 1)
-         return $next($request);
+      if($request->has('user_id')) {
+        $token = $request->header('token');
+        $id = $request->user->id;
+        $result =  DB::select( DB::raw("SELECT count(*) AS COUNT FROM user_usertype WHERE user_id = $id AND user_token='$token'"));
+        if((int)$result[0]->COUNT == 1)
+          return $next($request);
+      }
 
-        return response(['status'=>'Not a valid token'], Response::HTTP_UNAUTHORIZED);
-    }
+      return response(['status'=>'Not a valid token'], Response::HTTP_UNAUTHORIZED);
 }

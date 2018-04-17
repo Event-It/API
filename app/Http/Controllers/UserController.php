@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 
   public function __construct(){
-        $this->middleware('CheckUserToken')->except('index','store');
+        $this->middleware('CheckUserToken')->except('index','store','login');
     }
 
     /**
@@ -111,5 +111,16 @@ class UserController extends Controller
     public function destroy(user $user)
     {
         //
+    }
+
+    public function login(Request $request) {
+      $results = DB::select('SELECT * from user_usertype where usertype_id ='.$request->usertype_id.' AND user_email = "'.$request->user_email.'" AND user_password = "'.$request->user_password.'" AND user_usertype_is_active = 1');
+        if(count($results>0)) {
+          return response([
+              'user_id' => $results->user_id,
+              'user_email' => $results->user_email,
+              'token' => $results->user_token,
+          ],Response::HTTP_CREATED);
+        }
     }
 }
