@@ -114,13 +114,17 @@ class UserController extends Controller
     }
 
     public function login(Request $request) {
-      $results = DB::select('SELECT * from user_usertype where usertype_id ='.$request->usertype_id.' AND user_email = "'.$request->user_email.'" AND user_password = "'.$request->user_password.'" AND user_usertype_is_active = 1');
-        if(count($results>0)) {
+      $results = DB::select( DB::raw("SELECT * from user_usertype where usertype_id = $request->usertype_id AND user_email = '$request->user_email' AND user_password = '$request->user_password' AND user_usertype_is_active = 1"));
+      //return $results;
+        if(!empty($results)) {
           return response([
-              'user_id' => $results->user_id,
-              'user_email' => $results->user_email,
-              'token' => $results->user_token,
+              'user_id' => $results[0]->user_id,
+              'user_email' => $results[0]->user_email,
+              'token' => $results[0]->user_token,
           ],Response::HTTP_CREATED);
+        }
+        else {
+          return response(['status'=>'Not a valid credentials'], Response::HTTP_UNAUTHORIZED);
         }
     }
 }
