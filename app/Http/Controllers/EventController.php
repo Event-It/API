@@ -21,7 +21,7 @@ class EventController extends Controller
     {
       // events to show as preview to Organisers page who has created events.
          if($request->has('user_id')){                //maybe this if condition is unnecessary
-           $events = user::find(2)->events->where('event_status','=',0)->where('event_is_active','=',1);
+           $events = user::find($request->user_id)->events->where('event_status','=',0)->where('event_is_active','=',1);
            return UserEventResourceCollection::collection($events);
          }
     }
