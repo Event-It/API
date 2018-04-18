@@ -25,6 +25,6 @@ class CheckUserToken
         if((int)$result[0]->COUNT == 1)
           return $next($request);
       }
-
       return response(['status'=>'Not a valid token'], Response::HTTP_UNAUTHORIZED);
+    }
 }
