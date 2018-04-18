@@ -15,9 +15,9 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return user::with('member.announcements')->find(85)->member->pluck('announcements');
+        return AnnouncementResource::collection(user::with('member.announcements')->find($request->user_id)->member);
     }
 
     /**
@@ -56,7 +56,7 @@ class AnnouncementController extends Controller
      */
     public function show(announcement $announcement)
     {
-        return new AnnouncementResource($announcement);
+        //return new AnnouncementResource($announcement);
     }
 
     /**
@@ -79,7 +79,10 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, announcement $announcement)
     {
-        //
+        $announcement->update($request->all());
+        return response([
+            'status' => "Update successful"
+        ],Response::HTTP_CREATED);
     }
 
     /**

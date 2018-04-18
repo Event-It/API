@@ -17,9 +17,9 @@ class AnnouncementResource extends JsonResource
     public function toArray($request)
     {
         return[
-          'event_name' => event::find($this->event_id)->event_name,
-          'announcement_heading' => $this->announcement_heading,
-          'announcement_text' => $this->announcement_text,
+          'event_name' => event::find($this->id)->event_name,
+          'announcement_heading' => $this->announcements,
+          'announcement_text' => $this->announcements,
         ];
     }
 }

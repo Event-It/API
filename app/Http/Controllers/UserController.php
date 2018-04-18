@@ -51,12 +51,12 @@ class UserController extends Controller
           $user->save();
           $values = array('user_id' => $user->id, 'usertype_id' => $request->usertype_id, 'user_email' => $request->user_email, 'user_password' => $request->user_password, 'user_token' => md5($user->id . $request->usertype . $request->email . $request->password));
           $authID = DB::table('user_usertype')->insertGetId($values);
-          $results = DB::select('SELECT user_id , user_token from user_usertype where id ='.$authID.' AND user_usertype_is_active = 1');
+          $results = DB::select('SELECT user_id , usertype_id, user_token from user_usertype where id ='.$authID.' AND user_usertype_is_active = 1');
           return response($results,Response::HTTP_CREATED);
         } else if(count($userid) == 1) {
           $values = array('user_id' => $userid[0]->user_id, 'usertype_id' => $request->usertype_id, 'user_email' => $request->user_email, 'user_password' => $request->user_password, 'user_token' => md5($userid[0]->user_id . $request->usertype . $request->email . $request->password));
           $authID = DB::table('user_usertype')->insertGetId($values);
-          $results = DB::select('SELECT user_id , user_token from user_usertype where id ='.$authID);
+          $results = DB::select('SELECT user_id, usertype_id, user_token from user_usertype where id ='.$authID);
           return response($results,Response::HTTP_CREATED);
         } else
           return response([
@@ -119,7 +119,7 @@ class UserController extends Controller
         if(!empty($results)) {
           return response([
               'user_id' => $results[0]->user_id,
-              'user_email' => $results[0]->user_email,
+              'usertype_id' => $results[0]->usertype_id,
               'token' => $results[0]->user_token,
           ],Response::HTTP_CREATED);
         }
