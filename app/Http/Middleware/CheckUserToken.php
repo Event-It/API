@@ -27,4 +27,5 @@ class CheckUserToken
       }
 
       return response(['status'=>'Not a valid token'], Response::HTTP_UNAUTHORIZED);
-}
+    }
+ }
