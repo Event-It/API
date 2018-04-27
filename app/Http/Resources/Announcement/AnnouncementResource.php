@@ -18,8 +18,8 @@ class AnnouncementResource extends JsonResource
     {
         return[
           'event_name' => event::find($this->id)->event_name,
-          'announcement_heading' => $this->announcements,
-          'announcement_text' => $this->announcements,
+          'announcement_heading' => $this->announcement_heading,
+          'announcement_text' => $this->announcement_text,
         ];
     }
 }

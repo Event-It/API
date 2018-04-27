@@ -17,7 +17,8 @@ class AnnouncementController extends Controller
      */
     public function index(Request $request)
     {
-        return AnnouncementResource::collection(user::with('member.announcements')->find($request->user_id)->member);
+      return user::with('member.announcements')->find($request->user_id)->member;
+      return new annoucement(AnnouncementResource::collection(user::with('member.announcements')->find($request->user_id)->member));
     }
 
     /**
