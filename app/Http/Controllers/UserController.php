@@ -113,6 +113,12 @@ class UserController extends Controller
         //
     }
 
+    /**
+     * Login the specific resource from request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function login(Request $request) {
       $results = DB::select( DB::raw("SELECT * from user_usertype where usertype_id = $request->usertype_id AND user_email = '$request->user_email' AND user_password = '$request->user_password' AND user_usertype_is_active = 1"));
       //return $results;

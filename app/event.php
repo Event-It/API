@@ -10,7 +10,7 @@ class event extends Model
 		'event_name','event_start_time','event_end_time','event_country',
     'event_venue','event_city','event_description','event_video_link',
     'event_website','event_thumbnail_photo','event_banner_photo','event_status',
-    'event_security_option','event_has_sub_event','event_is_active'
+    'event_security_option','event_has_sub_event','event_is_active','eventtype_id'
 	];
 
     public function users() {
