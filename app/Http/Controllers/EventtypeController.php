@@ -5,12 +5,21 @@ namespace App\Http\Controllers;
 use App\eventtype;
 use Illuminate\Http\Request;
 
+/**
+* @Class Name: EventtypeController
+* @Author: Mrinal Dutta
+* @Last Modified: April 9, 2018
+* @Description: Controls the Eventtype related data.
+*/
+
+
 class EventtypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0029
      */
     public function index()
     {
@@ -21,6 +30,7 @@ class EventtypeController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0030
      */
     public function create()
     {
@@ -32,6 +42,7 @@ class EventtypeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0031
      */
     public function store(Request $request)
     {
@@ -43,6 +54,7 @@ class EventtypeController extends Controller
      *
      * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
+     * Module ID: API_0032
      */
     public function show(eventtype $eventtype)
     {
@@ -54,6 +66,7 @@ class EventtypeController extends Controller
      *
      * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
+     * Module ID: API_0033
      */
     public function edit(eventtype $eventtype)
     {
@@ -66,6 +79,7 @@ class EventtypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
+     * Module ID: API_0034
      */
     public function update(Request $request, eventtype $eventtype)
     {
@@ -77,6 +91,7 @@ class EventtypeController extends Controller
      *
      * @param  \App\eventtype  $eventtype
      * @return \Illuminate\Http\Response
+     * Module ID: API_0035
      */
     public function destroy(eventtype $eventtype)
     {

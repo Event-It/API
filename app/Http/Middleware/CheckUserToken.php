@@ -7,6 +7,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+* @Class Name: CheckUserToken
+* @Author: Mrinal Dutta
+* @Last Modified: April 27, 2018
+* @Description: Controls over the authentication of the user.
+*/
+
+
 class CheckUserToken
 {
     /**

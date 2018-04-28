@@ -8,6 +8,15 @@ use App\Http\Resources\User\UserResource;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\DB;
 
+/**
+* @Class Name: UserController
+* @Author: Shashank Dhyani
+* @Last Modified: April 18, 2018
+* @Description: Controls the User related data.
+*/
+
+
+
 class UserController extends Controller
 {
 
@@ -16,9 +25,10 @@ class UserController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+    * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0071
      */
     public function index()
     {
@@ -29,6 +39,7 @@ class UserController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0072
      */
     public function create()
     {
@@ -40,6 +51,7 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0073
      */
     public function store(Request $request)
     {
@@ -69,6 +81,7 @@ class UserController extends Controller
      *
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
+     * Module ID: API_0074
      */
     public function show(user $user)
     {
@@ -80,6 +93,7 @@ class UserController extends Controller
      *
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
+     * Module ID: API_0075
      */
     public function edit(user $user)
     {
@@ -92,6 +106,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
+     * Module ID: API_0076
      */
     public function update(Request $request, user $user)
     {
@@ -107,11 +122,21 @@ class UserController extends Controller
      *
      * @param  \App\user  $user
      * @return \Illuminate\Http\Response
+     * Module ID: API_0077
      */
     public function destroy(user $user)
     {
         //
     }
+
+    /**
+     * Authenticate the particular user
+     *
+     * @param  \App\user  $user
+     * @return \Illuminate\Http\Response
+     * Module ID: API_0078
+     */
+
 
     public function login(Request $request) {
       $results = DB::select( DB::raw("SELECT * from user_usertype where usertype_id = $request->usertype_id AND user_email = '$request->user_email' AND user_password = '$request->user_password' AND user_usertype_is_active = 1"));

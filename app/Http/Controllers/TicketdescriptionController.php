@@ -8,12 +8,20 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Http\Resources\Tickets\TicketDescriptionResource;
 use Illuminate\Support\Facades\DB;
 
+/**
+* @Class Name: TicketdescriptionController
+* @Author: Mrinal Dutta
+* @Last Modified: April 16, 2018
+* @Description: Controls the Ticket Description related data.
+*/
+
 class TicketdescriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0057
      */
     public function index()
     {
@@ -24,6 +32,7 @@ class TicketdescriptionController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0058
      */
     public function create()
     {
@@ -35,6 +44,7 @@ class TicketdescriptionController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0059
      */
     public function store(Request $request)
     {
@@ -56,6 +66,7 @@ class TicketdescriptionController extends Controller
      *
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
+     * Module ID: API_0060
      */
     public function show(ticketdescription $ticketdescription)
     {
@@ -67,6 +78,7 @@ class TicketdescriptionController extends Controller
      *
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
+     * Module ID: API_0061
      */
     public function edit(ticketdescription $ticketdescription)
     {
@@ -79,6 +91,7 @@ class TicketdescriptionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
+     * Module ID: API_0062
      */
     public function update(Request $request, ticketdescription $ticketdescription)
     {
@@ -94,6 +107,7 @@ class TicketdescriptionController extends Controller
      *
      * @param  \App\ticketdescription  $ticketdescription
      * @return \Illuminate\Http\Response
+     * Module ID: API_0063
      */
     public function destroy(ticketdescription $ticketdescription)
     {

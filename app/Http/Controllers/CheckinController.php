@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use App\checkin;
 use Illuminate\Http\Request;
 
+/**
+* @Class Name: CheckinController
+* @Author: Shashank Dhyani
+* @Last Modified: April 9, 2018
+* @Description: Controls the Check In related data.
+*/
+
 class CheckinController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0008
      */
     public function index()
     {
@@ -21,6 +29,7 @@ class CheckinController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0009
      */
     public function create()
     {
@@ -32,6 +41,7 @@ class CheckinController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0010
      */
     public function store(Request $request)
     {
@@ -43,6 +53,7 @@ class CheckinController extends Controller
      *
      * @param  \App\checkin  $checkin
      * @return \Illuminate\Http\Response
+     * Module ID: API_0011
      */
     public function show(checkin $checkin)
     {
@@ -54,6 +65,7 @@ class CheckinController extends Controller
      *
      * @param  \App\checkin  $checkin
      * @return \Illuminate\Http\Response
+     * Module ID: API_0012
      */
     public function edit(checkin $checkin)
     {
@@ -66,6 +78,7 @@ class CheckinController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\checkin  $checkin
      * @return \Illuminate\Http\Response
+     * Module ID: API_0013
      */
     public function update(Request $request, checkin $checkin)
     {
@@ -77,8 +90,9 @@ class CheckinController extends Controller
      *
      * @param  \App\checkin  $checkin
      * @return \Illuminate\Http\Response
+     * Module ID: API_0014
+     public function destroy(checkin $checkin)
      */
-    public function destroy(checkin $checkin)
     {
         //
     }

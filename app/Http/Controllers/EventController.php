@@ -10,26 +10,35 @@ use App\Http\Resources\Event\EventResource;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\DB;
 
+/**
+* @Class Name: EventController
+* @Author: Mrinal Dutta
+* @Last Modified: April 27, 2018
+* @Description: Controls the Event related data.
+*/
+
 class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0022
      */
     public function index(Request $request)
     {
       // events to show as preview to Organisers page who has created events.
-         if($request->has('user_id')){                //maybe this if condition is unnecessary
-           $events = user::find($request->user_id)->events->where('event_status','=',0)->where('event_is_active','=',1);
+                       //maybe this if condition is unnecessary
+           $events = user::find($request->header('user_id'))->events->where('event_status','=',0)->where('event_is_active','=',1);
            return UserEventResourceCollection::collection($events);
-         }
+
     }
 
     /**
      * Show the form for creating a new resource.x
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0023
      */
     public function create()
     {
@@ -41,6 +50,7 @@ class EventController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0024
      */
     public function store(Request $request)
     {
@@ -66,6 +76,7 @@ class EventController extends Controller
      *
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
+     * Module ID: API_0025
      */
     public function show(event $event)
     {
@@ -77,6 +88,7 @@ class EventController extends Controller
      *
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
+     * Module ID: API_0026
      */
     public function edit(event $event)
     {
@@ -89,6 +101,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
+     * Module ID: API_0027
      */
     public function update(Request $request, event $event)
     {
@@ -104,6 +117,7 @@ class EventController extends Controller
      *
      * @param  \App\event  $event
      * @return \Illuminate\Http\Response
+     * Module ID: API_0028
      */
     public function destroy(event $event)
     {

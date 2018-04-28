@@ -5,12 +5,21 @@ namespace App\Http\Controllers;
 use App\subevent;
 use Illuminate\Http\Request;
 
+/**
+* @Class Name: SubeventController
+* @Author: Mrinal Dutta
+* @Last Modified: April 18, 2018
+* @Description: Controls the SubEvent related data.
+*/
+
+
 class SubeventController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0036
      */
     public function index()
     {
@@ -21,6 +30,7 @@ class SubeventController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0037
      */
     public function create()
     {
@@ -32,6 +42,7 @@ class SubeventController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0038
      */
     public function store(Request $request)
     {
@@ -43,6 +54,7 @@ class SubeventController extends Controller
      *
      * @param  \App\subevent  $subevent
      * @return \Illuminate\Http\Response
+     * Module ID: API_0039
      */
     public function show(subevent $subevent)
     {
@@ -54,6 +66,7 @@ class SubeventController extends Controller
      *
      * @param  \App\subevent  $subevent
      * @return \Illuminate\Http\Response
+     * Module ID: API_0040
      */
     public function edit(subevent $subevent)
     {
@@ -66,6 +79,7 @@ class SubeventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\subevent  $subevent
      * @return \Illuminate\Http\Response
+     * Module ID: API_0041
      */
     public function update(Request $request, subevent $subevent)
     {
@@ -77,6 +91,7 @@ class SubeventController extends Controller
      *
      * @param  \App\subevent  $subevent
      * @return \Illuminate\Http\Response
+     * Module ID: API_0042
      */
     public function destroy(subevent $subevent)
     {

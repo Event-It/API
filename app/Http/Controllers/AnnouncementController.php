@@ -8,12 +8,21 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Resources\Announcement\AnnouncementResource;
 
+/**
+* @Class Name: AnnouncementController
+* @Author: Shashank Dhyani
+* @Last Modified: April 20, 2018
+* @Description: Controls the Announcement related data.
+*/
+
+
 class AnnouncementController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0001
      */
     public function index(Request $request)
     {
@@ -25,6 +34,7 @@ class AnnouncementController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * Module ID: API_0002
      */
     public function create()
     {
@@ -36,6 +46,7 @@ class AnnouncementController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * Module ID: API_0003
      */
     public function store(Request $request)
     {
@@ -54,6 +65,7 @@ class AnnouncementController extends Controller
      *
      * @param  \App\announcement  $announcement
      * @return \Illuminate\Http\Response
+     * Module ID: API_0004
      */
     public function show(announcement $announcement)
     {
@@ -65,6 +77,7 @@ class AnnouncementController extends Controller
      *
      * @param  \App\announcement  $announcement
      * @return \Illuminate\Http\Response
+     * Module ID: API_0005
      */
     public function edit(announcement $announcement)
     {
@@ -77,6 +90,7 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\announcement  $announcement
      * @return \Illuminate\Http\Response
+     * Module ID: API_0006
      */
     public function update(Request $request, announcement $announcement)
     {
@@ -91,6 +105,7 @@ class AnnouncementController extends Controller
      *
      * @param  \App\announcement  $announcement
      * @return \Illuminate\Http\Response
+     * Module ID: API_0007
      */
     public function destroy(announcement $announcement)
     {
