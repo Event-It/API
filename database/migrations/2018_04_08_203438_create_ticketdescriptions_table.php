@@ -19,6 +19,7 @@ class CreateTicketdescriptionsTable extends Migration
             $table->integer('ticket_price')->nullable();
             $table->integer('available_tickets')->nullable();
             $table->integer('sold_tickets')->default(0);
+            $table->text('ticket_description')->nullable();
             $table->integer('ticketdescriptionable_id')->unsigned();
             $table->string('ticketdescriptionable_type');
             $table->boolean('ticketdescription_is_active')->default(1);

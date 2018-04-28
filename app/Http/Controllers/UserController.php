@@ -132,7 +132,7 @@ class UserController extends Controller
     /**
      * Authenticate the particular user
      *
-     * @param  \App\user  $user
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      * Module ID: API_0078
      */

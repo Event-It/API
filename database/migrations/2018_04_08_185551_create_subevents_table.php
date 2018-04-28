@@ -22,6 +22,7 @@ class CreateSubeventsTable extends Migration
              $table->string('subevent_name',50);
              $table->dateTime('subevent_start_time');
              $table->dateTime('subevent_end_time');
+             $table->text('subevent_description')->nullable();
              $table->timestamps();
              $table->string('subevent_venue',40);
              $table->text('subevent_thumbnail_photo')->nullable();

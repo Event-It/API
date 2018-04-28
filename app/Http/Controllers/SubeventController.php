@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\subevent;
+use App\event;
 use Illuminate\Http\Request;
+use App\Http\Resources\SubEvent\SubEventResource;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\DB;
 
 /**
 * @Class Name: SubeventController
@@ -21,9 +25,9 @@ class SubeventController extends Controller
      * @return \Illuminate\Http\Response
      * Module ID: API_0036
      */
-    public function index()
+    public function index(event $event)
     {
-
+          return SubEventResource::collection($event->subevents);
     }
 
     /**
@@ -83,7 +87,11 @@ class SubeventController extends Controller
      */
     public function update(Request $request, subevent $subevent)
     {
-        //
+      $subevent->update($request->all());
+      return response([
+          'subevent_id' => $subevent->id,
+          'status' => "Updated successful"
+      ],Response::HTTP_CREATED);
     }
 
     /**
@@ -95,6 +103,7 @@ class SubeventController extends Controller
      */
     public function destroy(subevent $subevent)
     {
-        //
+      $subevent->delete();
+      return response(null,Response::HTTP_NO_CONTENT);
     }
 }

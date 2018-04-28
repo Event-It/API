@@ -31,8 +31,9 @@ class EventResource extends JsonResource
           'event_status' => $this->event_status,
           'event_security_option' => $this->event_security_option,
           'event_has_sub_event' => $this->event_has_sub_event,
+          'eventtype_id' =>$this->eventtype_id,
           'user_id' => $this->user_id,
-          'organizer_name' => user::find($this->user_id)->user_first_name." ".user::find($this->user_id)->user_last_name 
+          'organizer_name' => user::find($this->user_id)->user_first_name." ".user::find($this->user_id)->user_last_name
         ];
     }
 }
